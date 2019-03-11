@@ -1,0 +1,39 @@
+{{ "<!-- Basic Page Needs -->" | safeHTML }}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <meta name="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}">{{ end }}
+  {{ .Hugo.Generator }}
+
+  {{ "<!-- Mobile Specific Metas -->" | safeHTML }}
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ $title := print .Title " | " .Site.Title }}
+  {{ if .IsHome }}
+  {{ $title = .Site.Title }}
+  {{ end }}
+  <title>{{ $title }}</title>
+
+  <link rel="icon" href="{{ "images/favicon.png" | absURL }}">
+
+  {{ if .Site.Params.debug }}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {{ else }}
+  <link rel="stylesheet" type="text/css" href="{{ "plugins/bootstrap/bootstrap.min.css" | absURL }}" />
+  {{ end }}
+  <link rel="stylesheet" type="text/css" href="{{ "plugins/ionicons/ionicons.min.css" | absURL }}" />
+
+  {{ "<!-- template main css file -->" | safeHTML }}
+  {{ $styles := resources.Get "css/style.css" | minify}}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+</head>

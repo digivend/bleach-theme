@@ -1,0 +1,12 @@
+name = "Bleach"
+license = "MIT"
+licenselink = "https://github.com/digivend/bleach-theme/blob/master/LICENSE.md"
+description = "Simple and lightweight Blog theme for Hugo"
+homepage = "https://github.com/digivend/bleach-theme"
+tags = ["blog", "lighweight", "simple", "fast", "light", "modern", "hugo-theme", "responsive", "bootstrap", "white", "clean", "company"]
+features = ["blog"]
+min_version = "0.41"
+
+[author]
+  name = "digiVend"
+  homepage = "https://github.com/digivend/"

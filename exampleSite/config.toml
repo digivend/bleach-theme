@@ -1,0 +1,23 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Bleach Example"
+theme = "Bleach"
+
+[params]
+  description = "A simple and lightweight Hugo theme for a blazing fast static blog!"
+  author = "Your Name"
+  logo = "images/logo.jpg"
+  dateFormat = "Jan 2, 2006"
+   googleAnalitycsID = "Your ID"  
+
+  [params.footer]
+    impressum = true
+    company = "example Inc."
+
+  [params.social]
+    facebook = "https://facebooke.com"
+    twitter = "https://twitter.com"
+    instagram = "https://instagram.com"
+    # github = "https://github.com"
+    # linkedin = "https://linkedin.com"

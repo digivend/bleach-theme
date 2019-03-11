@@ -1,0 +1,20 @@
+<div class="footer">
+  <div class="clearfix">
+    <div class="copyright float-left">
+      <span>&copy;</span>
+      <script>document.write(new Date().getFullYear())</script>
+      <span>
+        {{ if isset .Site.Params.footer "company"}}
+        {{ .Site.Params.footer.company }}
+        {{ else }}
+        digiVend
+        {{ end }}
+      </span>
+    </div>
+    {{ if .Site.Params.footer.impressum }}
+    <div class="impressum">
+      <a href="/impressum">Impressum</a>
+    </div>
+    {{ end }}
+  </div>
+  </footer>

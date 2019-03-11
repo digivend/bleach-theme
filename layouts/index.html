@@ -1,0 +1,69 @@
+{{ define "main" }}
+
+{{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+{{ $posts := where .Pages.ByDate.Reverse "Section" "posts" }}
+{{ $paginator := .Paginate (after 1 $posts) 3 }}
+
+<div class="collection">
+  <div class="container">
+    <div class="row">
+      <div class="collection-latest">
+        {{ range first 1 $posts }}
+        <section class="collection-item-large">
+          <div class="row">
+            <a href="{{ .Permalink }}" class="col-lg-7 collection-item-large-thumb"
+              style="background-image: url('{{ absURL (default "images/default-img-header.jpeg" (default .Params.image .Params.thumbnail)) }}'); background-position: 50% 50% !important;"></a>
+            <div class="col-lg-5 collection-item-large-content">
+              <a href="{{ .Permalink }}">
+                <h3 class="collection-item-large-headline">
+                  {{ .Title }}
+                </h3>
+                <div class="collection-item-large-description lightText">
+                  {{ .Description | markdownify }}
+                </div>
+              </a>
+
+              <div class="collection-item-clearfix lightText">
+                <i class="icon ion-md-calendar"></i> {{ dateFormat $dateFormat .Date }}
+              </div>
+            </div>
+          </div>
+        </section>
+        {{ end }}
+      </div>
+    </div>
+
+
+    <div class="line-spacer"></div>
+
+    <div class="collection-list">
+      <div class="row">
+        {{ range $paginator.Pages }}
+        <div class="col-md-4 collection-item">
+          <a href="{{ .Permalink }}" class="collection-item-thumb"
+            style="background-image: url('{{ absURL (default "images/default-img-header.jpeg" (default .Params.image .Params.thumbnail)) }}'); background-position: 50% 50% !important;"></a>
+          <div class="collection-item-content">
+            <a href="{{ .Permalink }}">
+              <h3 class="collection-item-headline">
+                {{ .Title }}
+              </h3>
+              <div class="collection-item-description lightText">
+                {{ .Description | markdownify }}
+              </div>
+            </a>
+
+            <div class="collection-item-clearfix lightText">
+              <i class="ion-md-calendar"></i> {{ dateFormat $dateFormat .Date }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ partial "paginator.html" . }}
+  </div>
+</div>
+</div>
+
+{{ end }}

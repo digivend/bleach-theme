@@ -1,0 +1,20 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+
+<div class="row">
+  <div class="paginator">
+    <div class="paginator-item">
+      <a {{ if not $pag.HasPrev }} disabled{{ end }} href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}">
+        &laquo;</a> </div>
+    <div class="paginator-item">
+      {{$pag.PageNumber}}
+    </div>
+
+    <div class="paginator-item">
+      <a {{ if not $pag.HasNext }} disabled{{ end }}
+        href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}">&raquo;</a>
+    </div>
+  </div>
+</div>
+
+{{ end }}

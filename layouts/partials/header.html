@@ -1,0 +1,47 @@
+<div class="topbar">
+  <div class="row">
+    <div class="col-lg-12">
+      <nav class="navbar navbar-expand-lg">
+        <a href="{{ .Site.BaseURL }}">
+          <img class="brand" src="{{ absURL (default "images/logo.jpg" (default .Site.Params.logo)) }}" alt="logo" />
+        </a>
+        <div class="brand-title">
+          {{ if isset .Site.Params "title"}}
+          <a href="{{ .Site.BaseURL }}">
+            {{ .Site.Params.title }}
+          </a>
+          {{ end }}
+        </div>
+        <div class="social">
+          {{ if isset .Site.Params.social "facebook" }}
+          <a href="{{ .Site.Params.social.facebook | absURL }}">
+            <i class="ion-logo-facebook"></i>
+          </a>
+          {{ end }}
+          {{ if isset .Site.Params.social "twitter" }}
+          <a href="{{ .Site.Params.social.twitter | absURL }}">
+            <i class="ion-logo-twitter"></i>
+          </a>
+          {{ end }}
+          {{ if isset .Site.Params.social "instagram" }}
+          <a href="{{ .Site.Params.social.instagram | absURL }}">
+            <i class="ion-logo-instagram"></i>
+          </a>
+          {{ end }}
+          {{ if isset .Site.Params.social "linkedin" }}
+          <a href="{{ .Site.Params.social.linkedin | absURL }}">
+            <i class="ion-logo-linkedin"></i>
+          </a>
+          {{ end }}
+          {{ if isset .Site.Params.social "github" }}
+          <a href="{{ .Site.Params.social.github | absURL }}">
+            <i class="ion-logo-github"></i>
+          </a>
+          {{ end }}
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="head-spacer"></div>
