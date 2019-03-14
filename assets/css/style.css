@@ -1,17 +1,17 @@
 /*= Basics =*/
 @import url(
-  http://fonts.googleapis.com/css?family=Roboto:400,
+  https://fonts.googleapis.com/css?family=Roboto:400,
   300,
   100,
   500,
   700
 );
 @import url(
-  http://fonts.googleapis.com/css?family=Roboto+Condensed:400,
+  https://fonts.googleapis.com/css?family=Roboto+Condensed:400,
   300,
   700
 );
-@import url(http://fonts.googleapis.com/css?family=Glegoo);
+@import url(https://fonts.googleapis.com/css?family=Glegoo);
 
 body {
   font-family: "Roboto", sans-serif;
@@ -160,7 +160,6 @@ h3 {
 .head-spacer {
   padding: 10px;
 }
-
 
 /*= Collection Body =*/
 
@@ -370,26 +369,25 @@ h3 {
 
 /*= Resize =*/
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
   .collection-latest {
     margin-left: auto !important;
     margin-right: auto !important;
   }
 }
 
-@media(min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .collection-latest {
     margin-left: 30px;
   }
 
-  .collection-item-large-thumb{
+  .collection-item-large-thumb {
     width: 100%;
     height: 350px !important;
   }
 }
 
-@media(min-width: 768px) and (max-width: 991px) {
-
+@media (min-width: 768px) and (max-width: 991px) {
   .collection-latest {
     height: 700px;
   }
@@ -406,7 +404,7 @@ h3 {
   }
 }
 
-@media(min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .collection-item-large-thumb {
     width: 510px;
     height: 172px !important;
@@ -420,25 +418,24 @@ h3 {
   .collection-item-large-headline {
     word-break: break-word;
     word-wrap: break-word;
-    text-overflow: ellipsis!important;
+    text-overflow: ellipsis !important;
     line-height: 1.1;
     font-size: 26px;
     font-weight: 600;
   }
 
   .collection-item-large-description {
-    font-weight: 400!important;
-    font-size: 20px!important;
-    line-height: 1.2!important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
   }
 
   .line-spacer {
     display: none;
   }
-
 }
 
-@media(max-width: 575px) {
+@media (max-width: 575px) {
   .collection-item-large-thumb {
     margin-right: 47px;
     height: 172px !important;
@@ -452,16 +449,16 @@ h3 {
   .collection-item-large-headline {
     word-break: break-word;
     word-wrap: break-word;
-    text-overflow: ellipsis!important;
+    text-overflow: ellipsis !important;
     line-height: 1.1;
     font-size: 26px;
     font-weight: 600;
   }
 
   .collection-item-large-description {
-    font-weight: 400!important;
-    font-size: 20px!important;
-    line-height: 1.2!important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
   }
 
   .line-spacer {
@@ -469,7 +466,7 @@ h3 {
   }
 }
 
-@media(max-width: 300px) {
+@media (max-width: 300px) {
   .brand-title {
     display: none;
   }
