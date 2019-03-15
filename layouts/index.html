@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
-{{ $posts := where .Pages.ByDate.Reverse "Section" "posts" }}
+{{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ $paginator := .Paginate (after 1 $posts) 3 }}
 
 <div class="collection">

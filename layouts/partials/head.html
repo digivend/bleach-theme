@@ -8,36 +8,23 @@
 
   <meta
     name="description"
-    content="{{ with.Description }}{{ . }}{{ else }}{{
-      with.Site.Params.description
-    }}{{ . }}{{ end }}{{ end }}"
-  />
-  {{
-    with.Site.Params.author
-  }}
+    content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
+  {{ with .Site.Params.author }}
   <meta name="author" content="{{ . }}" />
-  {{
-    end
-  }}
+  {{ end }}
   {{ .Hugo.Generator }}
 
-  {{ "
-  <!-- Mobile Specific Metas -->
-  " | safeHTML }}
+  {{ "<!-- Mobile Specific Metas -->" | safeHTML }}
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}
   {{ $title = .Site.Title }}
-  {{
-    end
-  }}
+  {{end }}
   <title>{{ $title }}</title>
 
-  <link rel="icon" href="{{
-    "images/favicon.png" | absURL
-  }}">
+  <link rel="icon" href="{{ "images/favicon.png" | absURL}}">
 
   {{ if .Site.Params.debug }}
   <link
@@ -47,17 +34,10 @@
     crossorigin="anonymous"
   />
   {{ else }}
-  <link rel="stylesheet" type="text/css" href="{{
-    "plugins/bootstrap/bootstrap.min.css" | absURL
-  }}" />
-  {{
-    end
-  }}
-  <link rel="stylesheet" type="text/css" href="{{
-    "plugins/ionicons/ionicons.min.css" | absURL
-  }}" /> {{ "
-  <!-- template main css file -->
-  " | safeHTML }}
+  <link rel="stylesheet" type="text/css" href="{{ "plugins/bootstrap/bootstrap.min.css" | absURL }}" />
+  {{ end }}
+  <link rel="stylesheet" type="text/css" href="{{ "plugins/ionicons/ionicons.min.css" | absURL }}" />
+  {{ "<!-- template main css file -->" | safeHTML -}}
   {{ $styles := resources.Get "css/style.css" | minify}}
   <link
     rel="stylesheet"

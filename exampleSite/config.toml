@@ -9,10 +9,10 @@ theme = "Bleach"
   author = "Your Name"
   logo = "images/logo.jpg"
   dateFormat = "Jan 2, 2006"
-   googleAnalitycsID = "Your ID"  
+   googleAnalitycsID = "Your ID"
 
   [params.footer]
-    impressum = true
+    impressum = false
     company = "example Inc."
 
   [params.social]
